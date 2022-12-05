@@ -39,7 +39,7 @@ module.exports = function(Ext) {
 
     XTemplateCompiler.prototype.compile = function (tpl) {
         var me = this,
-            code = me.generate(tpl);
+            code = me.generate(tpl.replace(/\\/g, '\\\\'));
 
         // When using "new Function", we have to pass our "Ext" variable to it in order to
         // support sandboxing. If we did not, the generated function would use the global
